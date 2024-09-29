@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perencanaan Makanan Mingguan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<style>
+    <style>
         .hidden-menu {
             display: none;
         }
         .block-menu {
             display: block;
         }
-</style>
+    </style>
+</head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
-    <header class="bg-white w-full ">
+    <header class="bg-white w-full">
         <div class="w-full px-4 sm:px-6 lg:px-8 mx-auto">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex-1 md:flex md:items-center md:gap-12">
@@ -60,19 +60,17 @@
                         </div>
     
                         <div class="block md:hidden">
-                            <button id="hamburger-button" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                            <button id="hamburger" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
                                     class="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5"
+                                        fill-rule="evenodd"
+                                        d="M3 5h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2zm0 4h14a1 1 0 010 2H3a1 1 0 110-2z"
+                                        clip-rule="evenodd"
                                     />
                                 </svg>
                             </button>
@@ -81,17 +79,35 @@
                 </div>
             </div>
         </div>
-        <div class="block hidden-menu md:hidden">
-            <ul class="space-y-6 bg-gray-100 px-4 py-6 text-center">
-                <li><a class="block h-full w-full text-gray-500" href="index.html"> Home </a></li>
-                <li><a class="block h-full w-full text-gray-500" href="note.html"> Note </a></li>
-                <li><a class="block h-full w-full text-gray-500" href="time-plant.html"> Time - Plant </a></li>
-                <li><a class="block h-full w-full text-gray-500" href="foods.html"> Foods </a></li>
+    
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden-menu bg-white" id="mobileMenu">
+            <ul class="space-y-4 px-4 text-sm">
+                <li><a class="block text-gray-500 transition hover:text-gray-500/75" href="index.html"> Home </a></li>
+                <li><a class="block text-gray-500 transition hover:text-gray-500/75" href="note.html"> Note </a></li>
+                <li><a class="block text-gray-500 transition hover:text-gray-500/75" href="time-plant.html"> Time - Plant </a></li>
+                <li><a class="block text-gray-500 transition hover:text-gray-500/75" href="plan-food.html"> Foods </a></li>
             </ul>
+    
+            <div class="space-y-4 px-4">
+                <a
+                    class="block rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                    href="register.html"
+                >
+                    Register
+                </a>
+                <a
+                    class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                    href="login.html"
+                >
+                    Log in
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="flex-grow">
+        <!-- Konten utama bisa dimasukkan di sini -->
         <div class="max-w-4xl mt-3 mx-auto bg-white p-6 rounded-lg shadow-lg">
             <h1 class="text-2xl font-bold mb-4">Perencanaan Makanan Mingguan</h1>
             <button onclick="openModal()" class="mb-4 px-4 py-2 bg-indigo-600 text-white rounded-md">Tambah Perencanaan</button>
@@ -153,23 +169,26 @@
                 </div>
             </div>
         </div>
+    
     </main>
 
-    <footer class="bg-gray-900 text-white w-full mt-auto">
-        <div class="max-w-screen-xl px-4 py-6 mx-auto space-y-6">
-            <div class="text-center text-sm">
-                <p>&copy; 2023 My Website. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>Footer Content</p>
     </footer>
- <script src="script.js"></script>
+
+    <script src="script.js"></script>
     <script>
-        const btn = document.getElementById('hamburger-button');
-        const menu = document.querySelector('.hidden-menu');
-        
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('block-menu');
-            menu.classList.toggle('hidden-menu');
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function () {
+            if (mobileMenu.classList.contains('hidden-menu')) {
+                mobileMenu.classList.remove('hidden-menu');
+                mobileMenu.classList.add('block-menu');
+            } else {
+                mobileMenu.classList.remove('block-menu');
+                mobileMenu.classList.add('hidden-menu');
+            }
         });
     </script>
 </body>
