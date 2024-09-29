@@ -111,19 +111,22 @@
         <div class="max-w-4xl mt-3 mx-auto bg-white p-6 rounded-lg shadow-lg">
             <h1 class="text-2xl font-bold mb-4">Perencanaan Makanan Mingguan</h1>
             <button onclick="openModal()" class="mb-4 px-4 py-2 bg-indigo-600 text-white rounded-md">Tambah Perencanaan</button>
-            <table id="mealTable" class="min-w-full bg-white">
-                <thead>
-                    <tr>
-                        <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Tanggal</th>
-                        <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Hari</th>
-                        <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Makanan</th>
-                        <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Waktu</th>
-                        <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div class="overflow-x-auto">
+
+                <table id="mealTable" class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Tanggal</th>
+                            <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Hari</th>
+                            <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Makanan</th>
+                            <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Waktu</th>
+                            <th class="px-4 py-2 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     
         <!-- Modal -->
